@@ -1,0 +1,8 @@
+.center{
+  text-align: center;
+}
+.cont{
+  display: flex;
+  flex-direction: row;
+  clear: none;
+}
