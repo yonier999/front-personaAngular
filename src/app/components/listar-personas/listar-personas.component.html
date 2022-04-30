@@ -13,13 +13,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-primary">
+      <tr class="table-primary" *ngFor="let persona of listaPersonas">
         <!-- <th scope="row">Primary</th> -->
-        <td>Julian</td>
-        <td>Arias</td>
-        <td>yo@gmail.com</td>
-        <td>Riosucio</td>
-        <td>3105964898t</td>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellido}}</td>
+        <td>{{persona.email}}</td>
+        <td>{{persona.ciudad}}</td>
+        <td >{{persona.telefono}}</td>
         <td class="accion  center"><a title="Editar" class="icon-action"><i class="fa-solid fa-brush"></i></a></td>
         <td class="accion  center"><a title="Eliminar" class="icon-action"><i class="fa-solid fa-trash"></i></a></td>
 

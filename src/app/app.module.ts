@@ -6,6 +6,8 @@ import { ListarPersonasComponent } from './components/listar-personas/listar-per
 import { NavBArComponent } from './components/nav-bar/nav-bar.component';
 import { FormularioPersonaComponent } from './components/formulario-persona/formulario-persona.component';
 import { APP_ROUTING } from './app.rutas';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { APP_ROUTING } from './app.rutas';
   ],
   imports: [
     BrowserModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
