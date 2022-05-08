@@ -1,5 +1,5 @@
 export class PersonaModelo{
-  personaId:number;
+  personaId?:number;
   nombre:string = "";
   apellido:string ="";
   ciudad:string = "";

@@ -20,4 +20,7 @@ export class ServicioAPiService {
   ConsultarPersonas(){
     return this.http.get<RespuestaModelo<PersonaModelo[]>>(`${this.url}/ConsultarPersonas`,{headers:this.header})
   }
+  InsertarPersona(persona:PersonaModelo){
+    return this.http.post<RespuestaModelo<string>>(`${this.url}/InsertarPersonas`,persona,{headers:this.header});
+  }
 }

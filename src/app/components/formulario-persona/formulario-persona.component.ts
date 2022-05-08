@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PersonaModelo } from 'src/app/modelos/Personas/persona.modelo';
-
+import { ServicioAPiService } from 'src/app/Servicios/servicio/servicio-api.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-formulario-persona',
   templateUrl: './formulario-persona.component.html',
@@ -11,16 +13,33 @@ export class FormularioPersonaComponent implements OnInit {
 
   mensaje: string ="";
 
-  constructor() {
+  constructor(private serviA: ServicioAPiService,private router:Router) {
+
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   InsertarPersona(){
     this.mensaje = "";
     let validar = this.validarCampos();
     if(validar){
-      console.log(validar);
+      // console.log("llll")
+        this.serviA.InsertarPersona(this.persona).subscribe((resp)=>{
+          if(resp.mensaje.error == true)
+          {
+            Swal.fire({
+              icon:"warning",
+              title:"Alert",
+              text:`${resp.mensaje.mensaje}`
+            })
+          }else{
+            Swal.fire({
+              icon:"success",
+              title:"Exito!",
+              text:"Data insertada"
+            })
+            this.router.navigate(["/listarPersonas"]);
+          }
+        });
     }else{
 
     }
