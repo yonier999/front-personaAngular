@@ -8,31 +8,36 @@
         <div class="row row-cols-auto">
           <div class="form-group col-6">
             <label for="exampleInputEmail1" class="form-label mt-4">Nombre</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" [(ngModel)]="persona.nombre" name="nombre">
+
           </div>
           <div class="form-group col-6">
             <label for="exampleInputPassword1" class="form-label mt-4">Apellido</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido" [(ngModel)]="persona.apellido" name="apellido">
           </div>
           <div class="form-group col-6">
             <label for="exampleInputPassword1" class="form-label mt-4">Email</label>
-            <input type="email" class="form-control" id="" placeholder="example@gmail.com">
+            <input type="email" class="form-control" id="" placeholder="example@gmail.com" [(ngModel)]="persona.email" name="email">
           </div>
 
 
           <div class="form-group col-6">
             <label for="exampleInputPassword1" class="form-label mt-4">Ciudad</label>
-            <input type="text" class="form-control" id="" placeholder="Ciudad">
+            <input type="text" class="form-control" id="" placeholder="Ciudad" [(ngModel)]="persona.ciudad" name="ciudad">
           </div>
 
           <div class="form-group col-6">
             <label for="exampleInputPassword1" class="form-label mt-4">Telefono</label>
-            <input type="text" class="form-control" id="" placeholder="Telefono">
+            <input type="text" class="form-control" id="" placeholder="Telefono" [(ngModel)]="persona.telefono" name="telefono">
+          </div>
+          <div class="form-group col-12">
+
+            <br>
+            <small id="emailHelp" class="form-text text-muted"><h4>{{mensaje}}</h4></small>
           </div>
           <div class="form-group col-12">
             <br>
-            <input type="submit" class="btn btn-primary center form-control" value="Registrar">
+            <input type="submit" class="btn btn-primary center form-control" value="Registrar" (click)="InsertarPersona()">
           </div>
         </div>
       </div>
